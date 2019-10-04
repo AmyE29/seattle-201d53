@@ -8,7 +8,7 @@ Write a function called sum() that takes in two numbers as arguments and then re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSum() function below and check the console to see if the test passes.*/
 
 // Write your code here
-function sum(a, b) { //eslint-disable-line
+function sum(a, b) { 
     var addSum = a + b;
     var answer = 'The sum of ' + a + ' and ' + b + ' is '+ addSum + '.';
 
@@ -29,7 +29,7 @@ Write a function called multiply() that takes in two numbers as arguments and re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiply() function and see if the test passes.*/
 
 // Write your code here
-function multiply(a, b) { //eslint-disable-line
+function multiply(a, b) { 
     var multiProduct= a*b;
     var answer2 = 'The product of ' + a + ' and ' + b + ' is '+ multiProduct + '.';
     
@@ -37,6 +37,7 @@ function multiply(a, b) { //eslint-disable-line
 
 }
 multiply(5,9);
+
 // Here is the test for multiply(); uncomment it to run it
 // testMultiply(5,9);
 
@@ -55,16 +56,19 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-    var y = new sum (x, c)[0];
-        var element3 =  ' ' + a + b + c +  ' sum to ' + y + ' . ';
+    var x = sum(a,b)[0];
+    var y = sum(x, c)[0];
 
-        var w = new multiply(a, b)[0];
-        var z = new multiply (w, c)[0];
-        var element4 =  'The product of' + a + b + c +  ' is ' + z + ' . ';
+    var element3 =  ' ' + a + ' and ' + b + ' and ' + c +  ' sum to ' + y + ' . ';
 
-    return [element3, element4];
+    var w = multiply(a, b)[0];
+    var z = multiply (w, c)[0];
+    var element4 =  'The product of ' + a + ' and ' + ' and ' + b + ' and ' + c +  ' is ' + z + ' . ';
+
+    return [y, z, element3, element4];
 }
 sumAndMultiply (4,7,5);
+
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
 // testSumAndMultiply(4,7,5);
@@ -82,11 +86,18 @@ IMPORTANT DETAIL: You may not use the arithmetic operator + in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumArray() function and see if the test passes.*/
 
 // Write your code here
+
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
-
+  var sumArray = sumArr[0] + sumArr[1] + sumArr[2];
+  var answer4= sumArr[0] + ',' + sumArr[1] + ',' + sumArr[2] + ' was passed in as an array of numbers, and ' + sumArray + ' is their sum.';
+  return[sumArray,answer4];
 }
+sumArray(testArray);
+
+// Here is the test for sumArray(); uncomment it to run it
+// testSumArray(testArray);
 
 // Here is the test for sumArray(); uncomment it to run it
 
