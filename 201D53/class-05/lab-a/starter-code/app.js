@@ -90,11 +90,11 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
-  var sumArray = sumArr[0] + sumArr[1] + sumArr[2];
-  var answer4= sumArr[0] + ',' + sumArr[1] + ',' + sumArr[2] + ' was passed in as an array of numbers, and ' + sumArray + ' is their sum.';
+  var sumOfArr = sum(sumArr[0], sumArr[1])[0];
+  sumOfArr = sum(sumOfArr, sumArr[2])[0];
+  answer4=  testArray +  ' was passed in as an array of numbers, and ' + sumOfArr + ' is their sum.';
   return[sumArray,answer4];
 }
-sumArray(testArray);
 
 // Here is the test for sumArray(); uncomment it to run it
 // testSumArray(testArray);
@@ -116,13 +116,13 @@ IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyArray() function and see if the test passes.*/
 
 // Write your code here
+
 function multiplyArray(multArr) { //eslint-disable-line
-    var multiArr = multArr[0] * multArr[1] * multArr[2];
-    var answer5=  'The numbers' + multArr[0] + ',' + multArr[1] + ',' + multArr[2] + ' have a product of ' + multiArr + ' .';
-    return[ multiArr,answer5];
-   }
-    multiplyArray(testArray);
-    
+    var productArr = multiply(multArr[0], multArr[1])[0];
+    productArr = multiply(productArr, multArr[2])[0];
+    var answer5=  'The numbers ' + testArray + ' have a product of ' + productArr + ' .';
+    return[ productArr,answer5];
+   }    
 
 // Here is the test for multiplyArray(); uncomment it to run it
 // testMultiplyArray(testArray);
