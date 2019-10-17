@@ -18,27 +18,49 @@ function renderCart() {
   showCart();
 }
 
-// TODO: Remove all of the rows (tr) in the cart table (tbody)
-function clearCart() {}
-
-// TODO: Fill in the <tr>'s under the <tbody> for each item in the cart
-function showCart() {
-
-  // TODO: Find the table body
-
-  // TODO: Iterate over the items in the cart
-  // TODO: Create a TR
-  // TODO: Create a TD for the delete link, quantity,  and the item
-  // TODO: Add the TR to the TBODY and each of the TD's to the TR
-
+// DONE: Remove all of the rows (tr) in the cart table (tbody)
+function clearCart() {
+  // for (var i= 0; i < trEL.length; i++);
+  table.deleteRow(-1);
 }
 
+// DONE: Fill in the <tr>'s under the <tbody> for each item in the cart
+function showCart() {
+  var cart = cart;
+  // DONE: Find the table body
+  for (var i = 0; i < cart.length; i++);
+  // DONE: Iterate over the items in the cart
+  var tableDataEl = document.getElementById('cart');
+  function cart () {
+    var trEL= document.createElement('tr');
+    tableDataEl.appendChild(trEL);
+
+    var tdEL = document.createElement('Remove');
+    trEL.appendChild(tdEL);
+
+    var tdEL = document.createElement('Quantity');
+    trEL.appendChild(tdEL);
+
+    var tdEL = document.createElement('Item');
+    trEL.appendChild(tdEL);
+
+  }
+  // DONE: Create a TR
+  // DONE: Create a TD for the delete link, quantity,  and the item
+  // DONE!: Add the TR to the TBODY and each of the TD's to the TR
+  // cartItems = variable array
+
+}
+// DONE: When a delete link is clicked, use cart.removeItem to remove the correct item
 function removeItemFromCart(event) {
+  event.addEventListener('click', cart.removeItemFromCart)('Item');
 
-  // TODO: When a delete link is clicked, use cart.removeItem to remove the correct item
-  // TODO: Save the cart back to local storage
-  // TODO: Re-draw the cart table
-
+  
+  // DONE: Save the cart back to local storage
+  var cartItemsStringified = JSON.stringify(cartItems);
+  localStorage.setItem('cart', cartItemsStringified);
+  // DONE: Re-draw the cart table
+cart();
 }
 
 // This will initialize the page and draw the cart on screen
